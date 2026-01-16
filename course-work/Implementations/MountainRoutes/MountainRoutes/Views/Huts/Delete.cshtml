@@ -1,0 +1,57 @@
+﻿@model MountainRoutes.Models.Hut
+
+@{
+    ViewData["Title"] = "Изтриване";
+}
+
+<h1>Изтриване</h1>
+
+<h3>Сигурни ли сте, че искате да изтриете тази хижа?</h3>
+<div>
+    <h4>Хижа</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Име
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            Капацитет
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+        <dt class = "col-sm-2">
+            Има ресторант
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HasRestaurant)
+        </dd>
+        <dt class = "col-sm-2">
+            Географска ширина
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+        <dt class = "col-sm-2">
+            Географска дължина
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+        <dt class = "col-sm-2">
+            Маршрут
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Route.Name)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Изтрий" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад към списъка</a>
+    </form>
+</div>

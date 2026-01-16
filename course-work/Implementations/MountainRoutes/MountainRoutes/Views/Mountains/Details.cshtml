@@ -1,0 +1,48 @@
+﻿@model MountainRoutes.Models.Mountain
+
+@{
+    ViewData["Title"] = "Детайли";
+}
+
+<h1>Детайли</h1>
+
+<div>
+    <h4>Планина</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Име
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            Местоположение
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+        <dt class = "col-sm-2">
+            Височина (м)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+        <dt class = "col-sm-2">
+            Първо изкачване
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstAscent)
+        </dd>
+        <dt class = "col-sm-2">
+            Описание
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Редактирай</a> |
+    <a asp-action="Index">Назад към списъка</a>
+</div>

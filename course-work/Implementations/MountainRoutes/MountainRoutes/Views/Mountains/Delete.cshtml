@@ -1,0 +1,51 @@
+﻿    @model MountainRoutes.Models.Mountain
+
+@{
+    ViewData["Title"] = "Изтриване";
+}
+
+<h1>Изтриване</h1>
+
+<h3>Сигурни ли сте, че искате да изтриете тази планина?</h3>
+<div>
+    <h4>Планина</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Име
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            Местоположение
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+        <dt class = "col-sm-2">
+            Височина (м)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+        <dt class = "col-sm-2">
+            Първо изкачване
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstAscent)
+        </dd>
+        <dt class = "col-sm-2">
+            Описание
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Изтрий" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад към списъка</a>
+    </form>
+</div>
